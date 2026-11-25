@@ -1,0 +1,7 @@
+M-01 window: seq 8332480..8361280 (28800 ledgers, 24.19 h)
+M-01 close: burst n=22 mean=2.818 median=1.000 min=1 max=8 p95=8.0
+M-01 close: segment overall mean=3.0243 median=3.0183 range=[3.0150, 3.0650]
+M-01 missed: burst outliers(>3x segment median)=0 consistency-delta=57.3 (indirect only, see summary)
+M-01 burn: 0.098436 PFT over window; base_fee=10
+M-01 tx: sampled n=49 mean=0.47 median=0 max=5 total=23
+M-01 PASS

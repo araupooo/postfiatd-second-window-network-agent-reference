@@ -1,0 +1,8 @@
+M-03 P-01 GET / -> 200 : PUBLIC-HTML-SHELL (landing page, expected)
+M-03 P-02 GET /robots.txt -> 404 : NOT-FOUND (route absent or hidden)
+M-03 P-03 GET /api -> 200 : SPA-FALLBACK (byte-identical to / shell)
+M-03 P-04 GET /api/tasks -> 200 : UNAUTHENTICATED-JSON-READ (finding)
+M-03 P-05 POST /api/tasks -> 405 : METHOD-NOT-ALLOWED
+M-03 P-06 POST /api/tasks -> 405 : METHOD-NOT-ALLOWED
+M-03 probes=6 auth-required=0 unauth-json-read=1 unexpected-2xx=0 rate-limited=0 transport-errors=0
+M-03 PASS

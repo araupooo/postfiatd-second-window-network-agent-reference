@@ -1,0 +1,5 @@
+M-04 D-01 retry-after-failure: PASS -- succeeded on attempt 3 of 4 (503, timeout, success)
+M-04 D-02 resume-after-interruption: PASS -- gap seqs [106, 107, 108, 109, 110, 111] filled from scripted source; 18 headers contiguous
+M-04 D-03 digest-mismatch-detection: PASS -- tampered copy sha256 497109f684f670b6790e283a7d699b3cf4f48fe129b6dd66c5463cb8cd0b2705 != original 642041f154497d4325df243dec0326baf892c83857fc4cb7e6e4425ea034e9f5; sha256sum on original exits 0
+M-04 drills: 0 failed
+M-04 PASS
