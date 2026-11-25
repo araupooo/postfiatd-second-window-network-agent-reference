@@ -1,0 +1,4 @@
+M-02 validators: 25 (unique keys 25, duplicates 0)
+M-02 quorum: 67% rule -> 17, 80% rule -> 20 (delta 3)
+M-02 overlap: max total UNL difference 67% -> 8, 80% -> 4
+M-02 PASS

@@ -1,0 +1,60 @@
+== measure_window ==
+M-01 window: seq 8332480..8361280 (28800 ledgers, 24.19 h)
+M-01 close: burst n=22 mean=2.818 median=1.000 min=1 max=8 p95=8.0
+M-01 close: segment overall mean=3.0243 median=3.0183 range=[3.0150, 3.0650]
+M-01 missed: burst outliers(>3x segment median)=0 consistency-delta=57.3 (indirect only, see summary)
+M-01 burn: 0.098436 PFT over window; base_fee=10
+M-01 tx: sampled n=49 mean=0.47 median=0 max=5 total=23
+M-01 PASS
+== validator_topology ==
+M-02 validators: 25 (unique keys 25, duplicates 0)
+M-02 quorum: 67% rule -> 17, 80% rule -> 20 (delta 3)
+M-02 overlap: max total UNL difference 67% -> 8, 80% -> 4
+M-02 PASS
+== agent_surface_probe ==
+M-03 P-01 GET / -> 200 : PUBLIC-HTML-SHELL (landing page, expected)
+M-03 P-02 GET /robots.txt -> 404 : NOT-FOUND (route absent or hidden)
+M-03 P-03 GET /api -> 200 : SPA-FALLBACK (byte-identical to / shell)
+M-03 P-04 GET /api/tasks -> 200 : UNAUTHENTICATED-JSON-READ (finding)
+M-03 P-05 POST /api/tasks -> 405 : METHOD-NOT-ALLOWED
+M-03 P-06 POST /api/tasks -> 405 : METHOD-NOT-ALLOWED
+M-03 probes=6 auth-required=0 unauth-json-read=1 unexpected-2xx=0 rate-limited=0 transport-errors=0
+M-03 PASS
+== recovery_drills ==
+M-04 D-01 retry-after-failure: PASS -- succeeded on attempt 3 of 4 (503, timeout, success)
+M-04 D-02 resume-after-interruption: PASS -- gap seqs [106, 107, 108, 109, 110, 111] filled from scripted source; 18 headers contiguous
+M-04 D-03 digest-mismatch-detection: PASS -- tampered copy sha256 497109f684f670b6... != original 642041f154497d43...; sha256sum on original exits 0
+M-04 drills: 0 failed
+M-04 PASS
+ALL CHECKS PASSED
+./.github/workflows/ci.yml: OK
+./.gitignore: OK
+./README.md: OK
+./data/agent_surface_raw.json: OK
+./data/agent_surface_summary.json: OK
+./data/postfiatd_pin.json: OK
+./data/testnet_vl.json: OK
+./data/topology_summary.json: OK
+./data/window_raw.json: OK
+./data/window_summary.json: OK
+./docs/AGENT_SURFACE.md: OK
+./docs/CLAIMS.md: OK
+./docs/DECISION_MEMO.md: OK
+./docs/FAILURE_MODES.md: OK
+./docs/NETWORK_MEASUREMENTS.md: OK
+./docs/REMEDIATION.md: OK
+./docs/REPRODUCTION.md: OK
+./docs/SOURCES.md: OK
+./outputs/agent_surface_probe.log: OK
+./outputs/measure_window.log: OK
+./outputs/recovery_drills.log: OK
+./outputs/validator_topology.log: OK
+./reproduce.sh: OK
+./scripts/agent_surface_probe.py: OK
+./scripts/measure_window.py: OK
+./scripts/recovery_drills.py: OK
+./scripts/rpc_client.py: OK
+./scripts/run_all.sh: OK
+./scripts/validator_topology.py: OK
+./verify_digests.sh: OK
+REPRODUCE OK
