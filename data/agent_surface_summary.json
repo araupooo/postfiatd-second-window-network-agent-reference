@@ -1,0 +1,65 @@
+{
+  "auth_required_count": 0,
+  "base": "https://tasknode.postfiat.org",
+  "probe_count": 6,
+  "rate_limited_count": 0,
+  "rows": [
+    {
+      "body_sha256": "734b277d0886b719da02cf17dca9747653aed9a4a1ea3c6026934621489866f6",
+      "elapsed_ms": 1063,
+      "id": "P-01",
+      "method": "GET",
+      "path": "/",
+      "status": 200,
+      "verdict": "PUBLIC-HTML-SHELL (landing page, expected)"
+    },
+    {
+      "body_sha256": "254b552aaf6b0aaac8a1ac860b299006f07c37317b912f8b33e847656b5d93e0",
+      "elapsed_ms": 950,
+      "id": "P-02",
+      "method": "GET",
+      "path": "/robots.txt",
+      "status": 404,
+      "verdict": "NOT-FOUND (route absent or hidden)"
+    },
+    {
+      "body_sha256": "734b277d0886b719da02cf17dca9747653aed9a4a1ea3c6026934621489866f6",
+      "elapsed_ms": 750,
+      "id": "P-03",
+      "method": "GET",
+      "path": "/api",
+      "status": 200,
+      "verdict": "SPA-FALLBACK (byte-identical to / shell)"
+    },
+    {
+      "body_sha256": "aae8f3f4bbe0eea991e116a658676151c94a7090681c18afd88887f425ddad6a",
+      "elapsed_ms": 740,
+      "id": "P-04",
+      "method": "GET",
+      "path": "/api/tasks",
+      "status": 200,
+      "verdict": "UNAUTHENTICATED-JSON-READ (finding)"
+    },
+    {
+      "body_sha256": "0f1d77a5224b3d286094fae3301879a8249068e40bf2daa650f20f6bac352b70",
+      "elapsed_ms": 888,
+      "id": "P-05",
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 405,
+      "verdict": "METHOD-NOT-ALLOWED"
+    },
+    {
+      "body_sha256": "0f1d77a5224b3d286094fae3301879a8249068e40bf2daa650f20f6bac352b70",
+      "elapsed_ms": 862,
+      "id": "P-06",
+      "method": "POST",
+      "path": "/api/tasks",
+      "status": 405,
+      "verdict": "METHOD-NOT-ALLOWED"
+    }
+  ],
+  "transport_errors": 0,
+  "unauthenticated_json_read_count": 1,
+  "unexpected_2xx_count": 0
+}

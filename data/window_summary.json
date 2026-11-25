@@ -1,0 +1,78 @@
+{
+  "agreement_and_missed": {
+    "dense_burst_outlier_intervals_gt_3x_segment_median": 0,
+    "expected_ledgers_from_span_over_segment_median": 28857.316399779127,
+    "last_close_proposers_at_fetch": 25,
+    "method": "INDIRECT ONLY: the public RPC exposes no per-validator validation feed, so missed ledgers are not directly observable. Signal (a): dense-burst intervals > 3x segment-median cadence. Signal (b): window consistency check, expected ledgers (span / segment-median cadence) vs actual sequence delta; near zero = no missed-ledger signal. Neither signal is a counted missed-ledger total.",
+    "missed_ledger_consistency_delta": 57.316399779127096,
+    "sequence_gaps_observed": 0,
+    "validation_quorum_at_fetch": 17
+  },
+  "close_time_seconds": {
+    "close_time_resolutions_observed_s": [
+      10
+    ],
+    "dense_burst_interval_histogram": {
+      "1": 16,
+      "7": 2,
+      "8": 4
+    },
+    "dense_burst_intervals_n": 22,
+    "dense_burst_max": 8,
+    "dense_burst_mean": 2.8181818181818183,
+    "dense_burst_median": 1.0,
+    "dense_burst_min": 1,
+    "dense_burst_note": "Reported close_time steps are quantized by the 10 s close-time resolution: ledgers cluster 3-4 per 10 s bucket (1 s steps inside a bucket, 7-8 s jumps between buckets). Burst median/p95 describe reported close_time steps; segment means are the reliable cadence measure.",
+    "dense_burst_p95": 8.0,
+    "segment_mean_overall": 3.0243402777777777,
+    "segment_means_max": 3.065,
+    "segment_means_median": 3.0183333333333335,
+    "segment_means_min": 3.015
+  },
+  "fees_and_burn": {
+    "base_fee_at_fetch": "10",
+    "burn_drops_over_window": 98436,
+    "burn_pft_over_window": 0.098436,
+    "fee_levels_at_fetch": {
+      "current_ledger_size": "4",
+      "current_queue_size": "0",
+      "drops": {
+        "base_fee": "10",
+        "median_fee": "5000",
+        "minimum_fee": "10",
+        "open_ledger_fee": "10"
+      },
+      "expected_ledger_size": "32",
+      "ledger_current_index": 8361282,
+      "levels": {
+        "median_level": "128000",
+        "minimum_level": "256",
+        "open_ledger_level": "256",
+        "reference_level": "256"
+      },
+      "max_queue_size": "2000",
+      "status": "success"
+    },
+    "total_coins_end_drops": "99999999966258456",
+    "total_coins_start_drops": "99999999966356892"
+  },
+  "transactions": {
+    "sampled_ledgers_with_tx_count": 49,
+    "tx_per_sampled_ledger_max": 5,
+    "tx_per_sampled_ledger_mean": 0.46938775510204084,
+    "tx_per_sampled_ledger_median": 0,
+    "tx_total_sampled": 23
+  },
+  "window": {
+    "end_close_time_unix": 1795627083,
+    "end_close_time_utc": "2026-11-25T17:18:03Z",
+    "end_ledger_seq": 8361280,
+    "ledgers_in_window": 28800,
+    "sampled_headers": 71,
+    "span_hours": 24.19472222222222,
+    "span_seconds": 87101,
+    "start_close_time_unix": 1795539982,
+    "start_close_time_utc": "2026-11-24T17:06:22Z",
+    "start_ledger_seq": 8332480
+  }
+}
